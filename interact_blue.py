@@ -13,6 +13,7 @@ def get_pearl():
     if not _["inventory"].has("blue_pearl"):
         Driftwood.area.tilemap.layers[2].tile(5, 3).nowalk = None
         Driftwood.area.tilemap.layers[1].tile(5, 3).setgid(0)
+        _["inventory"].get("blue_pearl", 1)
         _["inventory"].save()
         if "blue_pearl_light" in Driftwood.vars and Driftwood.vars["blue_pearl_light"]:
             Driftwood.light.kill(Driftwood.vars["blue_pearl_light"])
