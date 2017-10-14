@@ -10,9 +10,9 @@ def open_door2():
 
 
 def get_pearl():
-    if "got_blue_pearl" not in Driftwood.database:
+    if not _["inventory"].has("blue_pearl"):
         Driftwood.area.tilemap.layers[2].tile(5, 3).nowalk = None
         Driftwood.area.tilemap.layers[1].tile(5, 3).setgid(0)
-        Driftwood.database.put("got_blue_pearl", "true")
+        _["inventory"].save()
         if "blue_pearl_light" in Driftwood.vars and Driftwood.vars["blue_pearl_light"]:
             Driftwood.light.kill(Driftwood.vars["blue_pearl_light"])

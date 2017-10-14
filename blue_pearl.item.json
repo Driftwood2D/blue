@@ -1,0 +1,9 @@
+{
+  "blue_pearl": {
+    "quantity": 0,
+    "weight": 0,
+    "active": false,
+    "disposable": false,
+    "triggers": {}
+  }
+}

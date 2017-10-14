@@ -1,5 +1,5 @@
 def lights():
-    if "blue_pearl_active" not in Driftwood.database:
+    if not _["inventory"]["blue_pearl"]["active"]:
         a = Driftwood.light.insert("lightmap_circle1.png", 2, 80, 20, 48, 48, "4444FFEE")
         b = Driftwood.light.insert("lightmap_circle1.png", 2, 20, 60, 48, 48, "4444FFEE")
         c = Driftwood.light.insert("lightmap_circle1.png", 2, 140, 60, 48, 48, "4444FFEE")
@@ -21,8 +21,9 @@ def lights():
 
 
 def activate_pearl():
-    if "got_blue_pearl" in Driftwood.database and "blue_pearl_active" not in Driftwood.database:
-        Driftwood.database["blue_pearl_active"] = "true"
+    if _["inventory"].has("blue_pearl") and not _["inventory"]["blue_pearl"]["active"]:
+        _["inventory"]["blue_pearl"]["active"] = "true"
+        _["inventory"].save()
         lights()
 
 
