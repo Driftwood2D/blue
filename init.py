@@ -23,4 +23,4 @@ def init():
     Driftwood.audio.play_music("A_Travellers_Tale.oga", loop=None)
 
     # Insert the player entity.
-    player = Driftwood.entity.insert("player.json", layer=1, x=16*4, y=16*8)
+    player = Driftwood.entity.insert("player.json", layer=1, x=16 * 4, y=16 * 8)
