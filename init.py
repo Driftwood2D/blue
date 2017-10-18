@@ -11,8 +11,10 @@ def init():
     _["inventory"] = inventory
 
     # Initialize special effects.
-    viewport = Driftwood.script["Lightshow/viewport.py"].ViewportManager()
+    viewport = Driftwood.script["Stageshow/viewport.py"].ViewportFX()
+    lighting = Driftwood.script["Stageshow/lighting.py"].LightingFX()
     _["viewport"] = viewport
+    _["lighting"] = lighting
 
     # Load the area.
     Driftwood.area.focus("blue1.json")
